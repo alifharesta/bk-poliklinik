@@ -1,6 +1,8 @@
-composer update
-cp .env.example .env
-php artisan key:generate
-ganti koneksi database pada file .env
-php artisan migrate --seed
-php artisan serve
+1. composer update
+
+2. cp .env.example .env
+
+3. php artisan key:generate
+4. ganti koneksi database pada file .env
+5. php artisan migrate --seed
+6. php artisan serve

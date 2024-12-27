@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', function () {
-    return view('landing.home');
+    return view('landing.home1');
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -20,6 +20,12 @@ Route::group(['middleware' => 'auth', 'as' => 'backoffice.', 'prefix' => 'backof
     Route::get('/', function () {
         return view('backoffice.dashboard');
     });
+
+    // Profile dokter
+    Route::get('/profile-dokter', function () {
+        return view('dashboard.profile_dokter');
+    })->name('profile-dokter');
+    Route::put('profile/dokter/{id}', ['as' => 'dokter.updateProfile', 'uses' => 'App\Http\Controllers\DokterController@updateProfile']);
 
     // PaymentMethod
     Route::get('payment_methods', ['as' => 'payment_methods.index', 'uses' => 'App\Http\Controllers\PaymentMethodController@index']);

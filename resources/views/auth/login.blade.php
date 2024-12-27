@@ -20,7 +20,7 @@
                                 </a>
                                 {{-- <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Lets Get Started {{ config("app.name") }}</h4> --}}
                                 {{-- <p class="text-muted  mb-0">Sign in to continue to {{ config("app.name") }}.</p> --}}
-                                <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Login Akun</h4>
+                                <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Login Akun Clinicom</h4>
                                 <p class="text-muted  mb-0"></p>
                             </div>
                         </div>

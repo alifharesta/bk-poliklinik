@@ -22,7 +22,14 @@ class RegistrasiController extends Controller
 
     public function history()
     {
-        return view('dashboard.registrasi.history');
+        $daftarPolis = DaftarPoli::with('jadwalPeriksa.dokter.poli', 'periksa', 'pasien')
+        ->whereHas('jadwalPeriksa', function ($query) {
+            $query->where('id_dokter', Auth::user()->id_dokter);
+        })
+        ->get();
+        // dd($daftarPolis->toSql());
+        return view('dashboard.registrasi.history', compact('daftarPolis'));
+        // return response()->json($daftarPolis);
     }
 
     public function detail($id)

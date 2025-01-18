@@ -20,9 +20,6 @@
         @slot('title')
             Riwayat Pasien
         @endslot
-        @slot('btn_create')
-            javascript:void(0);
-        @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12 col-sm-12">
@@ -161,9 +158,6 @@
                 order: [],
                 ajax: {
                     url: '{{ route('backoffice.registrasi.data') }}',
-                    // data: {
-                    //     id_pasien: '{{ request()->get('id_pasien') }}',
-                    // },
                     data: function(d) {
                         d.id_pasien = window.currentPasienId; // Add global variable to store current pasien id
                     },

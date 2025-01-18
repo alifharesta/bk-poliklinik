@@ -46,7 +46,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Data will be populated by DataTables -->
+                            {{-- @foreach ($daftarPolis as $daftarPoli)
+                            <tr>
+                                <th>{{ $daftarPoli->created_at }}</th>
+                                <th>{{ $daftarPoli->no_antrian }}</th>
+                                <th>{{ $daftarPoli->pasien->nama }}</th>
+                                <th>{{ $daftarPoli->no_antrian }}</th>
+                                <th>{{ $daftarPoli->keluhan }}</th>
+                                <th>{{ $daftarPoli->periksa->biaya_periksa ?? 'Belum diperiksa' }}</th>
+                                <th>
+                                    @if ($daftarPoli->periksa)
+                                        <span class="badge badge-soft-success">Selesai</span>
+                                    @else
+                                        <span class="badge badge-soft-warning">Menunggu Pemeriksaan</span>
+                                    @endif
+                                </th>
+                            </tr>
+                            @endforeach --}}
                         </tbody>
                     </table>
                 </div>
@@ -93,7 +109,7 @@
                     url: '{{ route('backoffice.registrasi.data') }}',
                     data: {
                         id_pasien: '{{ request()->get('id_pasien') }}',
-                    }
+                    },
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
